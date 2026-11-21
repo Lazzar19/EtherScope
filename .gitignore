@@ -1,0 +1,49 @@
+# CMake build output
+/build/
+/build-*/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+Makefile.in
+*.ninja
+.ninja_deps
+.ninja_log
+compile_commands.json
+
+# CMake local configuration
+CMakeUserPresets.json
+
+# Compiled executables and object files
+ping
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Debug and core files
+core
+core.*
+*.dSYM/
+
+# C/C++ tooling caches
+.cache/
+*.clangd
+
+# Common editor and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+ping.txt
