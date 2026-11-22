@@ -44,3 +44,11 @@ void printhex(int8* str, int16 size, int8 delim) {
 
     printf("\n");
 }
+
+void zero(int8* str, int16 size) {
+    int8* p;
+    int16 n;
+
+    for(n = 0, p = str; n < size; n++, p++)
+        *p = 0;
+}

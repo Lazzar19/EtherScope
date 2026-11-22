@@ -21,4 +21,4 @@ void printhex(int8*, int16, int8);
 
 int8* todotted(in_addr_t);
 
-void zerO(int8*, int16);
+void zero(int8*, int16);
