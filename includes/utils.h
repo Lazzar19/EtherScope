@@ -1,0 +1,24 @@
+
+#pragma once
+#pragma GCC diagnostic ignored "-Wstringop-truncation0"
+#pragma GCC diagnostic ignored "-Wformat-truncation="
+#pragma GCC diagnostic push 
+
+#include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
+typedef unsigned char int8;
+typedef unsigned short int int16;
+typedef unsigned int int32;
+
+void copy(int8*, int8*, int16*);
+
+int16 nstoh(int16); //nthos
+
+void printhex(int8*, int16, int8);
+
+int8* todotted(in_addr_t);
+
+void zerO(int8*, int16);

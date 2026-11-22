@@ -6,6 +6,9 @@
 #include <stdbool.h>
 #include <assert.h>
 
+
+#include "../includes/utils.h"
+
 typedef unsigned char int8;
 typedef unsigned short int int16;
 typedef unsigned int int32;
