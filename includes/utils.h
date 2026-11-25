@@ -13,7 +13,7 @@ typedef unsigned char int8;
 typedef unsigned short int int16;
 typedef unsigned int int32;
 
-void copy(int8*, int8*, int16*);
+void copy(int8*, int8*, int16);
 
 int16 nstoh(int16); //nthos
 

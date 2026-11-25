@@ -1,33 +1,33 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <assert.h>
+
+#include "../includes/main.h"
+
+icmp* make_icmp(int8 type, int8 code, int8* data, int16 size) {
+
+    int16 n;
+    icmp* p;
+
+    if(!data || size == 0) 
+        return (icmp*)0;
+
+    n = sizeof(struct s_icmp) + size; 
+    p = (icmp*) malloc($i n);
+    assert(p); 
+
+    zero($1 p, n);
+    copy($1 &p->data, data, size);
+
+    p->type_ = type;
+    p->code_ = code;
+    p->checksum_ = checksum_func(p);
 
 
-#include "../includes/utils.h"
-
-typedef unsigned char int8;
-typedef unsigned short int int16;
-typedef unsigned int int32;
-typedef unsigned long long int int64;
-
-#define $1 (int8 *)
-#define $2 (int16)
-#define $4 (int32)
-#define $8 (int64)
-#define $c (char*)
-#define $i (int*)
-
-
-
+    return p;
+}
 
 int main(int argc, char** argv) {
 
-    printf("test");
 
+    
 
     return 0;
 }
