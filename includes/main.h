@@ -9,11 +9,12 @@
 
 #include "../includes/utils.h"
 
+#define PACKED __attributes__((packed))
+
 typedef unsigned char int8;
 typedef unsigned short int int16;
 typedef unsigned int int32;
 typedef unsigned long long int int64;
-
 #define $1 (int8 *)
 #define $2 (int16)
 #define $4 (int32)
@@ -21,17 +22,33 @@ typedef unsigned long long int int64;
 #define $c (char*)
 #define $i (int*)
 
-struct s_icmp{
+enum icmp_type {
+    unassigned,
+    echo, 
+    echo_reply
+};
+typedef enum icmp_type icmp_type;
 
+struct s_icmp_raw{
     int8 type_;
     int8 code_;
     int16 checksum_;
     int8 data[];
+}packed;
 
+
+struct s_icmp{
+    icmp_type kind;
+    int8* data;
+    int16 size;
 };
-
 typedef struct s_icmp icmp;
-icmp* make_icmp(int8, int8, int8*, int16);  // int16 is data size
+
+
+
+icmp* make_icmp(icmp_type,const int8*, int16);  // int16 is data size
+int8* eval_icmp(icmp*);
+void show_icmp(icmp*);
 
 
 int main(int, char**);
