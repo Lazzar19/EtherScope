@@ -29,6 +29,7 @@ enum icmp_type {
 };
 typedef enum icmp_type icmp_type;
 
+// represents icmp structure obtained directly from network
 struct s_icmp_raw{
     int8 type_;
     int8 code_;
@@ -36,7 +37,7 @@ struct s_icmp_raw{
     int8 data[];
 }packed;
 
-
+// internal representation of icmp packets
 struct s_icmp{
     icmp_type kind;
     int8* data;
@@ -51,4 +52,7 @@ int8* eval_icmp(icmp*);
 void show_icmp(icmp*);
 
 
+int16 checksum_calc(int8*, int16);
 int main(int, char**);
+
+
